@@ -17,7 +17,13 @@
             <div class="progress-bar">
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
-            <div class="progress-text">Question <span id="current-q-num">1</span> of <span id="total-q-num">--</span></div>
+            <div class="progress-text">
+                Question <span id="current-q-num">1</span> of <span id="total-q-num">--</span>
+                <div class="go-to-container" style="display: inline-block; margin-left: 15px;">
+                    <input type="number" id="go-to-input" min="1" style="width: 50px; padding: 2px;" placeholder="#">
+                    <button id="go-to-btn" class="btn secondary" style="padding: 2px 8px; font-size: 0.8rem;">Go</button>
+                </div>
+            </div>
         </header>
 
         <main id="question-container">
