@@ -190,7 +190,7 @@ Please explain why the correct answer is correct and why the other options are i
         `.trim();
 
         const encodedPrompt = encodeURIComponent(prompt);
-        window.open(`https://chatgpt.com/?q=${encodedPrompt}`, '_blank');
+        window.open(`https://chatgpt.com/?q=${encodedPrompt}&temporary-chat=true`, '_blank');
     }
 
     // Event Listeners
