@@ -127,23 +127,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show ChatGPT Button
         chatGPTBtn.style.display = 'flex';
+        chatGPTBtn.dataset.questionIndex = currentQuestionIndex; // Bind index
 
         // Hide Submit button to clean up UI (optional, or keep it disabled)
         submitBtn.style.display = 'none';
     }
 
     function openChatGPT() {
-        const question = questions[currentQuestionIndex];
-        const selectedInputs = document.querySelectorAll('input[name="answer"]:checked');
-        // Note: Inputs are disabled now, but we can still read them. 
-        // If the user moved to next/prev, we need to re-capture or store state. 
-        // But here we are on the same page.
+        const index = parseInt(chatGPTBtn.dataset.questionIndex, 10);
+        // Fallback to currentQuestionIndex if not set (shouldn't happen)
+        const questionIndex = isNaN(index) ? currentQuestionIndex : index;
+        const question = questions[questionIndex];
 
-        // However, if we re-rendered, selectedInputs might be lost if we didn't persist them.
-        // Since we don't persist state on nav, this button is only available immediately after answering.
-        // We can get selected values from the DOM since we just disabled them, not removed them.
-
-        // Actually, let's just grab the values from the disabled inputs that are checked
+        // Get user answers from the disabled inputs
         const checkedInputs = document.querySelectorAll('input[name="answer"]:checked');
         const userAnswers = Array.from(checkedInputs).map(input => input.value);
 
