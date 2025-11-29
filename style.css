@@ -141,8 +141,13 @@ h2 {
     margin-bottom: 8px;
 }
 
-.correct-msg { color: var(--success-color); }
-.incorrect-msg { color: var(--error-color); }
+.correct-msg {
+    color: var(--success-color);
+}
+
+.incorrect-msg {
+    color: var(--error-color);
+}
 
 #correct-answer-display {
     font-size: 0.9rem;
@@ -199,7 +204,8 @@ footer {
 
 .chatgpt {
     width: 100%;
-    background-color: #10a37f; /* ChatGPT green */
+    background-color: #10a37f;
+    /* ChatGPT green */
     color: white;
     display: flex;
     align-items: center;
@@ -215,17 +221,124 @@ footer {
     .question-card {
         padding: 20px;
     }
-    
+
     .controls {
         flex-wrap: wrap;
     }
-    
+
     #submit-btn {
         order: -1;
         width: 100%;
     }
-    
-    #prev-btn, #next-btn {
-        flex: 1;
-    }
+}
+
+/* Custom Radio & Checkbox Styling */
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-secondary);
+    border-radius: 50%;
+    /* Circle for radio */
+    margin-right: 12px;
+    margin-top: 2px;
+    /* Align with text */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.option-label input[type="checkbox"] {
+    border-radius: 4px;
+    /* Square for checkbox */
+}
+
+.option-label input[type="radio"]:checked,
+.option-label input[type="checkbox"]:checked {
+    border-color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.option-label input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.option-label input[type="checkbox"]:checked::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Custom Number Input Styling */
+#go-to-input {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 60px;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+#go-to-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Remove spinner buttons for number input */
+#go-to-input::-webkit-outer-spin-button,
+#go-to-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#go-to-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Custom Select Dropdown Styling (Generic) */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 36px 10px 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: border-color 0.2s ease;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+select option {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
 }
