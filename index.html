@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Developer Associate Practice Tests</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AWS Developer Associate (DVA-C02)</h1>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text">Question <span id="current-q-num">1</span> of <span id="total-q-num">--</span></div>
+        </header>
+
+        <main id="question-container">
+            <div class="question-card">
+                <h2 id="question-text">Loading question...</h2>
+                <div id="question-images"></div>
+                
+                <div class="options-container" id="options-container">
+                    <!-- Options will be injected here -->
+                </div>
+
+                <div class="feedback" id="feedback" style="display: none;">
+                    <div id="feedback-message"></div>
+                    <div id="correct-answer-display"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="controls">
+                <button id="prev-btn" class="btn secondary" disabled>Previous</button>
+                <button id="submit-btn" class="btn primary">Submit Answer</button>
+                <button id="next-btn" class="btn secondary">Next</button>
+            </div>
+            <div class="external-actions">
+                <button id="chatgpt-btn" class="btn chatgpt" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM4.5 8a.5.5 0 0 1 .5-.5h2.5V5a.5.5 0 0 1 1 0v2.5H11a.5.5 0 0 1 0 1h-2.5V11a.5.5 0 0 1-1 0v-2.5H5a.5.5 0 0 1-.5-.5z"/> <!-- Placeholder icon -->
+                    </svg>
+                    Ask ChatGPT
+                </button>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
