@@ -294,6 +294,201 @@ footer {
     padding: 6px 8px;
     font-family: inherit;
     font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-label:hover {
+    background-color: var(--option-hover);
+    border-color: var(--text-secondary);
+}
+
+.option-label input {
+    margin-top: 4px;
+    margin-right: 12px;
+    accent-color: var(--accent-color);
+}
+
+.option-text {
+    flex: 1;
+}
+
+/* Feedback Styles */
+.feedback {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.feedback.correct {
+    border-left: 4px solid var(--success-color);
+}
+
+.feedback.incorrect {
+    border-left: 4px solid var(--error-color);
+}
+
+#feedback-message {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.correct-msg {
+    color: var(--success-color);
+}
+
+.incorrect-msg {
+    color: var(--error-color);
+}
+
+#correct-answer-display {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Footer Controls */
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.primary:hover:not(:disabled) {
+    background-color: var(--accent-hover);
+}
+
+.secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.secondary:hover:not(:disabled) {
+    background-color: var(--option-hover);
+}
+
+.chatgpt {
+    width: 100%;
+    background-color: #10a37f;
+    /* ChatGPT green */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatgpt:hover {
+    background-color: #0d8a6a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .question-card {
+        padding: 20px;
+    }
+
+    .controls {
+        flex-wrap: wrap;
+    }
+
+    #submit-btn {
+        order: -1;
+        width: 100%;
+    }
+}
+
+/* Custom Radio & Checkbox Styling */
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-secondary);
+    border-radius: 50%;
+    /* Circle for radio */
+    margin-right: 12px;
+    margin-top: 2px;
+    /* Align with text */
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.option-label input[type="checkbox"] {
+    border-radius: 4px;
+    /* Square for checkbox */
+}
+
+.option-label input[type="radio"]:checked,
+.option-label input[type="checkbox"]:checked {
+    border-color: var(--accent-color);
+    background-color: rgba(59, 130, 246, 0.1);
+}
+
+.option-label input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+}
+
+.option-label input[type="checkbox"]:checked::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent-color);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Custom Number Input Styling */
+#go-to-input {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
     width: 60px;
     text-align: center;
     transition: border-color 0.2s ease;
@@ -313,6 +508,7 @@ footer {
 
 #go-to-input[type=number] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 /* Custom Select Dropdown Styling (Generic) */
